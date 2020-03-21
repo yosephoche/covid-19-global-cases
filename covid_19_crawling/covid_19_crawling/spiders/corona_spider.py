@@ -2,6 +2,7 @@ import scrapy
 import json
 from ..items import Covid19CrawlingItem
 
+
 class CoronaSpider(scrapy.Spider):
     name = "corona"
     start_urls = [
@@ -10,11 +11,15 @@ class CoronaSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
+        # TODO:
+        #  [] Store data to database using postgres
+
         items = Covid19CrawlingItem()
         # json_response = json.loads(response.body)
-        # print(json_response["cases"])
+
         th = response.xpath('//tr[@id="LC1"]//th/text()').get()
-        for row in response.xpath('//tbody//tr[@class="js-file-line"]'):
+        table = response.xpath('//tbody//tr[@class="js-file-line"]')
+        for row in table:
             items["country_region"] = row.xpath('td[3]//text()').extract_first()
             items["province_state"] = row.xpath('td[2]//text()').extract_first()
             items["confirmed"] = row.xpath('td[5]//text()').extract_first()
