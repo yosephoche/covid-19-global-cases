@@ -16,7 +16,8 @@ class CoronaSpider(scrapy.Spider):
         # "https://corona.lmao.ninja/all",
         # "https://corona.lmao.ninja/jhucsse",
         # "03-20-2020.csv",
-        # "https://covid19.mathdro.id/api"
+        # "https://covid19.mathdro.id/api",
+
     ]
     url = "https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_daily_reports/"
     date_today = date.today()

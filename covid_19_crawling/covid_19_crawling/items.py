@@ -20,8 +20,23 @@ class Covid19CrawlingItem(scrapy.Item):
     last_updated = scrapy.Field()
 
 
+class CovidCasesItem(scrapy.Item):
+    total_cases = scrapy.Field()
+    death = scrapy.Field()
+    recovered = scrapy.Field()
+    active_case = scrapy.Field()
+    closed_case = scrapy.Field()
+
+
 class CountryItem(scrapy.Item):
+    region = scrapy.Field()
     country = scrapy.Field()
+    total_cases = scrapy.Field()
+    death = scrapy.Field()
+    recovered = scrapy.Field()
+    active_case = scrapy.Field()
+    closed_case = scrapy.Field()
+    last_updated = scrapy.Field()
 
 
 
