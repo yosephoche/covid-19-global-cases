@@ -21,7 +21,8 @@ class Covid19CrawlingItem(scrapy.Item):
 
 
 class CountryItem(scrapy.Item):
-    pass
+    country = scrapy.Field()
+
 
 
 class ProvinceItem(scrapy.Item):
